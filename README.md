@@ -47,6 +47,20 @@ npm run dev
 
 В `vercel.json` уже есть rewrite на `index.html` для React Router.
 
+## GitHub Pages
+
+Сайт: https://camber62.github.io/mini-crm-objects-tasks/
+
+Публикуется собранная папка `dist` в ветке `gh-pages`. Перед сборкой нужен `.env` с публичным ключом (не `service_role`):
+
+```bash
+VITE_BASE_PATH=/mini-crm-objects-tasks/ pnpm run build
+cp dist/index.html dist/404.html
+touch dist/.nojekyll
+```
+
+В Supabase → Authentication → URL Configuration добавьте адрес сайта в Site URL.
+
 ## Что проверять
 
 | Роль          | Ожидание                                      |
